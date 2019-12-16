@@ -1,0 +1,25 @@
+{
+  "name": "Jira Templates",
+  "description": "Adds a context menu with useful Jira templates",
+  "icons": {
+    "128": "images/doc128.png",
+    "16": "images/doc16.png",
+    "48": "images/doc48.png"
+  },
+  "manifest_version": 2,
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*.atlassian.net/*", "https://*.atlassian.net/*"],
+      "js": ["contentscript.js"],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "permissions": ["contextMenus", "tabs", "activeTab"],
+  "version": "0.1",
+  "version_name": "[mod]"
+}
